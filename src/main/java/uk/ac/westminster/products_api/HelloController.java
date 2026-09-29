@@ -28,6 +28,8 @@ public class HelloController {
         return "API running -" + LocalDate.now().toString();
     }
 
+    @GetMapping("/info")
+    public String info() { return "Application uses SwaggerUI and Spirngboot and is linked to my Github account.";}
 
     // TODO (Activity 3): add your /goodbye endpoint here.
     @GetMapping("/goodbye")
