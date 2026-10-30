@@ -11,6 +11,11 @@ public class ProductService {
     private List<Product> products = new ArrayList<>();
     private Long nextID = 1L;
 
+    public ProductService() {
+        products.add(new DigitalProduct(nextID++, "Cynerpunk2067 (E-Book)", 29.99, "/downloads/cyberpunk2067.pdf",6.3));
+        products.add(new PhysicalProduct(nextID++, "Basmati Rice", 1800, 10, "40x10"));
+    }
+
     public List<Product> getAllProducts(){
         return products;
     }
