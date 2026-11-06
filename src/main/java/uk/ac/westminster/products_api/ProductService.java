@@ -12,7 +12,7 @@ public class ProductService {
     private Long nextID = 1L;
 
     public ProductService() {
-        products.add(new DigitalProduct(nextID++, "Cynerpunk2067 (E-Book)", 29.99, "/downloads/cyberpunk2067.pdf",6.3));
+        products.add(new DigitalProduct(nextID++, "How to OOPs (E-Book)", 29.99, "/downloads/oops.pdf", 6.3) {});
         products.add(new PhysicalProduct(nextID++, "Basmati Rice", 1800, 10, "40x10"));
     }
 
@@ -40,5 +40,13 @@ public class ProductService {
         return products.stream()
                 .filter(p -> p.getName().contains(name))
                 .toList();
+    }
+
+    public List<String> getAllSummaries() {
+        ArrayList<String> temp = new ArrayList<>();
+        for (Product p : products) {
+            temp.add(p.getSummary());
+        }
+        return temp;
     }
 }
